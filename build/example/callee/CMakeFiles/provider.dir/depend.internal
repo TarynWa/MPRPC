@@ -8,4 +8,5 @@ example/callee/CMakeFiles/provider.dir/userservice.cpp.o
  ../example/user.pb.h
  ../include/mprpcapplication.h
  ../include/mprpcconfig.h
+ ../include/rpcprovider.h
  /home/wangt/项目/rpcCorrespond/example/callee/userservice.cpp

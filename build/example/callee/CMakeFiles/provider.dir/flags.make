@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/wangt/项目/rpcCorrespond/example -I/home/wangt/项目/rpcCorrespond/include 
+CXX_INCLUDES = -I/home/wangt/项目/rpcCorrespond/logsys/include -I/home/wangt/项目/rpcCorrespond/example -I/home/wangt/项目/rpcCorrespond/include 
 

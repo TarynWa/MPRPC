@@ -1,13 +1,10 @@
 #include "mprpcapplication.h"
-#include <iostream>
-#include <unistd.h>
 MprpcConfig MprpcApplication::m_config;
 
 void ShowArgsHelp()
 {
     std::cout << "format: command -i <configfile>" << std::endl;
 }
-
 void MprpcApplication::Init(int argc, char **argv)
 {
 
@@ -16,6 +13,8 @@ void MprpcApplication::Init(int argc, char **argv)
         ShowArgsHelp();
         exit(EXIT_FAILURE);
     }
+    //Logstart();
+    //LOG_INFO << "this is rizhi";
     int c = 0;
     std::string config_file;
     while ((c = getopt(argc, argv, "i:")) != -1)
@@ -43,13 +42,13 @@ void MprpcApplication::Init(int argc, char **argv)
     std::cout << "zookeeperport:" << m_config.Load("zookeeperport") << std::endl;
 }
 
-MprpcApplication& MprpcApplication::GetInstance()
+MprpcApplication &MprpcApplication::GetInstance()
 {
     static MprpcApplication app;
     return app;
 }
 
-MprpcConfig& MprpcApplication::GetConfig()
+MprpcConfig &MprpcApplication::GetConfig()
 {
     return m_config;
 }

@@ -27,6 +27,10 @@ ZkClient::~ZkClient()
 
 void ZkClient::Start()
 {
+	FILE* log_file = fopen("/home/wangt/项目/rpcCorrespond/bin/wangt.20260114185335.936854.log", "a");
+    if (log_file != nullptr) {
+        zoo_set_log_stream(log_file); // 设置ZK日志输出到文件
+    }
     std::string host = MprpcApplication::GetInstance().GetConfig().Load("zookeeperip");
     std::string port = MprpcApplication::GetInstance().GetConfig().Load("zookeeperport");
     std::string connstr = host + ":" + port;

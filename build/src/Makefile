@@ -179,6 +179,87 @@ mprpcconfig.cpp.s:
 	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cpp.s
 .PHONY : mprpcconfig.cpp.s
 
+rpcheader.pb.o: rpcheader.pb.cc.o
+
+.PHONY : rpcheader.pb.o
+
+# target to build an object file
+rpcheader.pb.cc.o:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
+.PHONY : rpcheader.pb.cc.o
+
+rpcheader.pb.i: rpcheader.pb.cc.i
+
+.PHONY : rpcheader.pb.i
+
+# target to preprocess a source file
+rpcheader.pb.cc.i:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.i
+.PHONY : rpcheader.pb.cc.i
+
+rpcheader.pb.s: rpcheader.pb.cc.s
+
+.PHONY : rpcheader.pb.s
+
+# target to generate assembly for a file
+rpcheader.pb.cc.s:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.s
+.PHONY : rpcheader.pb.cc.s
+
+rpcprovider.o: rpcprovider.cpp.o
+
+.PHONY : rpcprovider.o
+
+# target to build an object file
+rpcprovider.cpp.o:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o
+.PHONY : rpcprovider.cpp.o
+
+rpcprovider.i: rpcprovider.cpp.i
+
+.PHONY : rpcprovider.i
+
+# target to preprocess a source file
+rpcprovider.cpp.i:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cpp.i
+.PHONY : rpcprovider.cpp.i
+
+rpcprovider.s: rpcprovider.cpp.s
+
+.PHONY : rpcprovider.s
+
+# target to generate assembly for a file
+rpcprovider.cpp.s:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cpp.s
+.PHONY : rpcprovider.cpp.s
+
+zookeeperutil.o: zookeeperutil.cpp.o
+
+.PHONY : zookeeperutil.o
+
+# target to build an object file
+zookeeperutil.cpp.o:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o
+.PHONY : zookeeperutil.cpp.o
+
+zookeeperutil.i: zookeeperutil.cpp.i
+
+.PHONY : zookeeperutil.i
+
+# target to preprocess a source file
+zookeeperutil.cpp.i:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.i
+.PHONY : zookeeperutil.cpp.i
+
+zookeeperutil.s: zookeeperutil.cpp.s
+
+.PHONY : zookeeperutil.s
+
+# target to generate assembly for a file
+zookeeperutil.cpp.s:
+	cd /home/wangt/项目/rpcCorrespond/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.s
+.PHONY : zookeeperutil.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -194,6 +275,15 @@ help:
 	@echo "... mprpcconfig.o"
 	@echo "... mprpcconfig.i"
 	@echo "... mprpcconfig.s"
+	@echo "... rpcheader.pb.o"
+	@echo "... rpcheader.pb.i"
+	@echo "... rpcheader.pb.s"
+	@echo "... rpcprovider.o"
+	@echo "... rpcprovider.i"
+	@echo "... rpcprovider.s"
+	@echo "... zookeeperutil.o"
+	@echo "... zookeeperutil.i"
+	@echo "... zookeeperutil.s"
 .PHONY : help
 
 

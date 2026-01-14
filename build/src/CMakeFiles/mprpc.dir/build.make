@@ -83,19 +83,64 @@ src/CMakeFiles/mprpc.dir/mprpcconfig.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/mprpcconfig.cpp.s"
 	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangt/项目/rpcCorrespond/src/mprpcconfig.cpp -o CMakeFiles/mprpc.dir/mprpcconfig.cpp.s
 
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../src/rpcprovider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangt/项目/rpcCorrespond/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mprpc.dir/rpcprovider.cpp.o -c /home/wangt/项目/rpcCorrespond/src/rpcprovider.cpp
+
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/rpcprovider.cpp.i"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangt/项目/rpcCorrespond/src/rpcprovider.cpp > CMakeFiles/mprpc.dir/rpcprovider.cpp.i
+
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/rpcprovider.cpp.s"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangt/项目/rpcCorrespond/src/rpcprovider.cpp -o CMakeFiles/mprpc.dir/rpcprovider.cpp.s
+
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o: ../src/zookeeperutil.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangt/项目/rpcCorrespond/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mprpc.dir/zookeeperutil.cpp.o -c /home/wangt/项目/rpcCorrespond/src/zookeeperutil.cpp
+
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/zookeeperutil.cpp.i"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangt/项目/rpcCorrespond/src/zookeeperutil.cpp > CMakeFiles/mprpc.dir/zookeeperutil.cpp.i
+
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/zookeeperutil.cpp.s"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangt/项目/rpcCorrespond/src/zookeeperutil.cpp -o CMakeFiles/mprpc.dir/zookeeperutil.cpp.s
+
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o: ../src/rpcheader.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangt/项目/rpcCorrespond/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mprpc.dir/rpcheader.pb.cc.o -c /home/wangt/项目/rpcCorrespond/src/rpcheader.pb.cc
+
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/rpcheader.pb.cc.i"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangt/项目/rpcCorrespond/src/rpcheader.pb.cc > CMakeFiles/mprpc.dir/rpcheader.pb.cc.i
+
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/rpcheader.pb.cc.s"
+	cd /home/wangt/项目/rpcCorrespond/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangt/项目/rpcCorrespond/src/rpcheader.pb.cc -o CMakeFiles/mprpc.dir/rpcheader.pb.cc.s
+
 # Object files for target mprpc
 mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/mprpcapplication.cpp.o" \
-"CMakeFiles/mprpc.dir/mprpcconfig.cpp.o"
+"CMakeFiles/mprpc.dir/mprpcconfig.cpp.o" \
+"CMakeFiles/mprpc.dir/rpcprovider.cpp.o" \
+"CMakeFiles/mprpc.dir/zookeeperutil.cpp.o" \
+"CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
 
 # External object files for target mprpc
 mprpc_EXTERNAL_OBJECTS =
 
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/mprpcapplication.cpp.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/mprpcconfig.cpp.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/build.make
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangt/项目/rpcCorrespond/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../../lib/libmprpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangt/项目/rpcCorrespond/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../lib/libmprpc.a"
 	cd /home/wangt/项目/rpcCorrespond/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean_target.cmake
 	cd /home/wangt/项目/rpcCorrespond/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mprpc.dir/link.txt --verbose=$(VERBOSE)
 

@@ -11,6 +11,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../logsys/include"
   "../example"
   "../include"
   )
@@ -18,6 +19,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/wangt/项目/rpcCorrespond/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake"
+  "/home/wangt/项目/rpcCorrespond/build/logsys/CMakeFiles/logsys.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

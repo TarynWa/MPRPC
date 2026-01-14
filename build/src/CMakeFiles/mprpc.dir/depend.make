@@ -8,3 +8,24 @@ src/CMakeFiles/mprpc.dir/mprpcapplication.cpp.o: ../src/mprpcapplication.cpp
 src/CMakeFiles/mprpc.dir/mprpcconfig.cpp.o: ../include/mprpcconfig.h
 src/CMakeFiles/mprpc.dir/mprpcconfig.cpp.o: ../src/mprpcconfig.cpp
 
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o: ../include/rpcheader.pb.h
+src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o: ../src/rpcheader.pb.cc
+
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../include/mprpcapplication.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../include/mprpcconfig.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../include/rpcheader.pb.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../include/rpcprovider.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../include/zookeeperutil.h
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../logsys/include/AppendFile.hpp
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../logsys/include/LogCommon.hpp
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../logsys/include/LogFile.hpp
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../logsys/include/LogMessage.hpp
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../logsys/include/Logger.hpp
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../logsys/include/Timestamp.hpp
+src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o: ../src/rpcprovider.cpp
+
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o: ../include/mprpcapplication.h
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o: ../include/mprpcconfig.h
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o: ../include/zookeeperutil.h
+src/CMakeFiles/mprpc.dir/zookeeperutil.cpp.o: ../src/zookeeperutil.cpp
+

@@ -1,5 +1,7 @@
 #pragma once
 #include"mprpcconfig.h"
+#include <iostream>
+#include <unistd.h>
 class MprpcApplication
 {
     public:
