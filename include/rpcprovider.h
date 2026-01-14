@@ -7,6 +7,7 @@
 #include<functional>
 #include<google/protobuf/descriptor.h>
 #include<unordered_map>
+
 class RpcProvider
 {
     public:
@@ -17,7 +18,7 @@ class RpcProvider
     //处理上报的消息回调函数
     void onMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
     //处理上报的连接函数
-    void onConnection(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
+    void onConnection(const muduo::net::TcpConnectionPtr&);
     void SendRpcResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message*);
     // service服务类型信息
     struct ServiceInfo
