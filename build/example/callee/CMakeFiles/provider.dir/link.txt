@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/provider.dir/userservice.cpp.o CMakeFiles/provider.dir/__/user.pb.cc.o  -o ../../../bin/provider   -L/home/wangt/项目/rpcCorrespond/lib  -Wl,-rpath,/home/wangt/项目/rpcCorrespond/lib ../../../lib/libmprpc.a -lprotobuf ../../../lib/liblogsys.a -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt 

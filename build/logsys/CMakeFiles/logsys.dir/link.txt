@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/liblogsys.a  CMakeFiles/logsys.dir/src/AppendFile.cpp.o CMakeFiles/logsys.dir/src/AsyncLogging.cpp.o CMakeFiles/logsys.dir/src/LogFile.cpp.o CMakeFiles/logsys.dir/src/LogMessage.cpp.o CMakeFiles/logsys.dir/src/Logger.cpp.o CMakeFiles/logsys.dir/src/Timestamp.cpp.o
-/usr/bin/ranlib ../../lib/liblogsys.a

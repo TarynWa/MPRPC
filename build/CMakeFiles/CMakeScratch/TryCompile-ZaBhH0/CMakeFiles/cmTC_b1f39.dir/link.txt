@@ -1,0 +1,1 @@
+/usr/bin/c++ -v -Wl,-v CMakeFiles/cmTC_b1f39.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b1f39
