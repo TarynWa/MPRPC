@@ -1,10 +1,11 @@
 #include "rpcprovider.h"
 #include"mprpcapplication.h"
-#include<muduo/net/TcpServer.h>
+#include<nwl/TcpServer.hpp>
 #include"zookeeperutil.h"
 #include "LogFile.hpp"
 #include"rpcheader.pb.h"
-wangt::LogFile logfile("/home/wangt/项目/rpcCorrespond/bin/wangt", 1024 * 128);
+// 日志文件落在程序运行目录下（原硬编码路径 /home/wangt/项目/... 在其他机器不存在会导致 fopen 失败断言）
+wangt::LogFile logfile("wangt", 1024 * 128);
 void writeFile( const string &msg)
 {
     logfile.append(msg);
@@ -26,12 +27,12 @@ void RpcProvider::NotifyService(::google::protobuf::Service *service)
     //获取对象的服务器信息
     const google::protobuf::ServiceDescriptor*pserviceDesc=service->GetDescriptor();
     std::string  service_name=pserviceDesc->name();
-    LOG_INFO<<"SERVICE_NAME:"<<service_name;
+    WT_LOG_INFO<<"SERVICE_NAME:"<<service_name;
     int methodCnt=pserviceDesc->method_count();
     for(int i=0;i<methodCnt;i++){
         const google::protobuf::MethodDescriptor*pmethodDesc=pserviceDesc->method(i);
         std::string method_name = pmethodDesc->name();
-        LOG_INFO<<"METHOD_NAME:"<<method_name;
+        WT_LOG_INFO<<"METHOD_NAME:"<<method_name;
         service_info.m_methodMap.insert({method_name, pmethodDesc});
     }
     service_info.m_service = service;
@@ -42,8 +43,9 @@ void RpcProvider::Run()
 {
     std::string ip=MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
     uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
-    muduo::net::InetAddress address(ip, port);
-    muduo::net::TcpServer server(&loop, address, "RpcProvider");
+    // nwl::InetAddress 参数顺序为 (port, ip)，与 muduo 相反
+    nwl::InetAddress address(port, ip);
+    nwl::TcpServer server(&loop, address, "RpcProvider");
     server.setConnectionCallback(std::bind(&RpcProvider::onConnection, this, std::placeholders::_1));
     server.setMessageCallback(std::bind(&RpcProvider::onMessage,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
     server.setThreadNum(4);
@@ -73,7 +75,7 @@ void RpcProvider::Run()
     loop.loop();
 }
 
-void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net::Buffer *buffer, muduo::Timestamp)
+void RpcProvider::onMessage(const nwl::TcpConnPtr &conn, nwl::Buffer *buffer, nwl::Timestamp)
 {
     std::string recv_buf = buffer->retrieveAllAsString();
     uint32_t header_size = 0;
@@ -135,11 +137,11 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net
     google::protobuf::Message *response = service->GetResponsePrototype(method).New();
 
     // 给下面的method方法的调用，绑定一个Closure的回调函数
-    google::protobuf::Closure *done = google::protobuf::NewCallback<RpcProvider, 
-                                                                    const muduo::net::TcpConnectionPtr&, 
+    google::protobuf::Closure *done = google::protobuf::NewCallback<RpcProvider,
+                                                                    const nwl::TcpConnPtr&,
                                                                     google::protobuf::Message*>
-                                                                    (this, 
-                                                                    &RpcProvider::SendRpcResponse, 
+                                                                    (this,
+                                                                    &RpcProvider::SendRpcResponse,
                                                                     conn, response);
 
     // 在框架上根据远端rpc请求，调用当前rpc节点上发布的方法
@@ -148,14 +150,14 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net
 
 }
 
-void RpcProvider::onConnection(const muduo::net::TcpConnectionPtr &conn)
+void RpcProvider::onConnection(const nwl::TcpConnPtr &conn)
 {
     if(!conn->connected()){
         conn->shutdown();
     }
 }
 
-void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr &conn, google::protobuf::Message *response)
+void RpcProvider::SendRpcResponse(const nwl::TcpConnPtr &conn, google::protobuf::Message *response)
 {
     std::string response_str;
     if (response->SerializeToString(&response_str)) // response进行序列化

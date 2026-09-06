@@ -1,8 +1,7 @@
 #pragma once
 #include"google/protobuf/service.h"
-#include<muduo/net/EventLoop.h>
-#include<muduo/net/InetAddress.h>
-#include<muduo/net/TcpConnection.h>
+#include<nwl/EventLoop.hpp>
+#include<nwl/TcpServer.hpp>
 #include<string.h>
 #include<functional>
 #include<google/protobuf/descriptor.h>
@@ -14,12 +13,12 @@ class RpcProvider
     void NotifyService(::google::protobuf::Service* service);
     void Run();
     private:
-    muduo::net::EventLoop loop;
+    nwl::EventLoop loop;
     //处理上报的消息回调函数
-    void onMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
+    void onMessage(const nwl::TcpConnPtr&, nwl::Buffer*, nwl::Timestamp);
     //处理上报的连接函数
-    void onConnection(const muduo::net::TcpConnectionPtr&);
-    void SendRpcResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message*);
+    void onConnection(const nwl::TcpConnPtr&);
+    void SendRpcResponse(const nwl::TcpConnPtr&, google::protobuf::Message*);
     // service服务类型信息
     struct ServiceInfo
     {
