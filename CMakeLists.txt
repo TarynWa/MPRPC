@@ -1,13 +1,9 @@
-cmake_minimum_required(VERSION 4.0)
-project(demo)
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+cmake_minimum_required(VERSION 3.14)
+project(mprpc)
 
-include_directories(${PROJECT_SOURCE_DIR}/logsys/include)
+# 动态库输出由顶层 CMAKE_LIBRARY_OUTPUT_DIRECTORY 统一指向 chat/lib
 include_directories(${PROJECT_SOURCE_DIR}/example)
 include_directories(${PROJECT_SOURCE_DIR}/include)
-link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 add_subdirectory(src)
-add_subdirectory(logsys)
 add_subdirectory(example)
