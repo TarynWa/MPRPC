@@ -27,7 +27,7 @@ ZkClient::~ZkClient()
 
 void ZkClient::Start()
 {
-	FILE* log_file = fopen("wangt.zookeeper.log", "a");
+	FILE* log_file = fopen("/home/wangt/chat/logmsg/wangt.zookeeper.log", "a");
     if (log_file != nullptr) {
         zoo_set_log_stream(log_file); // 设置ZK日志输出到文件
     }

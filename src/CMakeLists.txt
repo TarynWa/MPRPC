@@ -26,3 +26,4 @@ target_link_libraries(mprpc
         zookeeper_mt
         Threads::Threads
 )
+add_library(lib::mprpc ALIAS mprpc)

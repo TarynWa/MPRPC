@@ -5,7 +5,7 @@
 #include "LogFile.hpp"
 #include"rpcheader.pb.h"
 // 日志文件落在程序运行目录下（原硬编码路径 /home/wangt/项目/... 在其他机器不存在会导致 fopen 失败断言）
-wangt::LogFile logfile("wangt", 1024 * 128);
+wangt::LogFile logfile("/home/wangt/chat/src/logsystem/test/rpc_provide", 1024 * 128);
 void writeFile( const string &msg)
 {
     logfile.append(msg);
@@ -96,6 +96,7 @@ void RpcProvider::onMessage(const nwl::TcpConnPtr &conn, nwl::Buffer *buffer, nw
     {
         // 数据头反序列化失败
         std::cout << "rpc_header_str:" << rpc_header_str << " parse error!" << std::endl;
+        conn->shutdown();  // 主动断开，避免客户端 recv 永久阻塞
         return;
     }
      std::string args_str = recv_buf.substr(4 + header_size, args_size);
@@ -114,6 +115,7 @@ void RpcProvider::onMessage(const nwl::TcpConnPtr &conn, nwl::Buffer *buffer, nw
     if (it == m_serviceMap.end())
     {
         std::cout << service_name << " is not exist!" << std::endl;
+        conn->shutdown();  // 主动断开，避免客户端 recv 永久阻塞
         return;
     }
 
@@ -121,6 +123,7 @@ void RpcProvider::onMessage(const nwl::TcpConnPtr &conn, nwl::Buffer *buffer, nw
     if (mit == it->second.m_methodMap.end())
     {
         std::cout << service_name << ":" << method_name << " is not exist!" << std::endl;
+        conn->shutdown();  // 主动断开，避免客户端 recv 永久阻塞
         return;
     }
 
@@ -132,6 +135,7 @@ void RpcProvider::onMessage(const nwl::TcpConnPtr &conn, nwl::Buffer *buffer, nw
     if (!request->ParseFromString(args_str))
     {
         std::cout << "request parse error, content:" << args_str << std::endl;
+        conn->shutdown();  // 主动断开，避免客户端 recv 永久阻塞
         return;
     }
     google::protobuf::Message *response = service->GetResponsePrototype(method).New();
